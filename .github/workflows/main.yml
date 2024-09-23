@@ -33,4 +33,3 @@ jobs:
           -Dbrowser=chrome \
           -DheadlessExecution=true \
           -Dsurefire.failIfNoSpecifiedTests=false \
-          -e  # Add Maven error flag here
