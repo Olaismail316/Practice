@@ -31,7 +31,7 @@ public class GitHubPageTest {
         System.out.println("Hey. Title is: " + driver.getTitle());
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
