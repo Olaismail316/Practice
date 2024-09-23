@@ -14,8 +14,9 @@ jobs:
       # Step 1: Install Docker Compose
       - name: Install Docker Compose
         run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose
+          sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version  # Check if Docker Compose is installed
 
       # Step 2: Set up Selenium Grid using Docker Compose with Scaling
       - name: Set up Selenium Grid with Chrome
@@ -49,3 +50,8 @@ jobs:
           -Dbrowser=chrome \
           -DheadlessExecution=true \
           -Dsurefire.failIfNoSpecifiedTests=false \
+          -e
+
+      # Step 7: Tear down Selenium Grid
+      - name: Tear down Selenium Grid
+        run: docker-compose -f docker-compose.yml down  # Bring down the Selenium Grid
