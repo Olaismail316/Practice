@@ -14,7 +14,7 @@ import java.net.URL;
 public class sample {
     WebDriver driver;
 
-    String baseUrl = "https://www.facebook.com/";
+    String baseUrl = "https://github.com/";
 
     String baseUrl2 = "https://www.yahoo.com/";
 
@@ -36,8 +36,7 @@ public class sample {
             driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
         }
     }
-    @Test
-     (priority = 1)
+    @Test(priority = 1)
     public void testGoogleSearch() {
         // Perform a simple test
         driver.get(baseUrl);
