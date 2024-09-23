@@ -1,0 +1,50 @@
+name: Run GitHubPageTest with Selenium Grid
+
+on:
+  workflow_dispatch:  # Allows manual triggering from GitHub Actions UI
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 1: Set up Docker Compose (for Selenium Grid)
+      - name: Set up Selenium Grid using Docker Compose
+        run: docker-compose -f docker-compose.yml up -d  # Bring up Selenium Grid in detached mode
+
+      # Step 2: Wait for Selenium Grid to be ready (optional but recommended)
+      - name: Wait for Selenium Grid to be ready
+        run: |
+          echo "Waiting for Selenium Grid to be ready..."
+          sleep 15  # Wait a few seconds for the Grid to initialize
+
+      # Step 3: Set up JDK 21
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'zulu'
+          cache: 'maven'
+
+      # Step 4: Set up Maven
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v5
+        with:
+          maven-version: 3.9.5
+
+      # Step 5: Run GitHubPageTest on Selenium Grid
+      - name: Run GitHubPageTest
+        run: mvn test \
+          -Dtest=GitHubPageTest \
+          -DexecutionAddress=http://localhost:4444 \
+          -Dbrowser=chrome \
+          -DheadlessExecution=true \
+          -Dsurefire.failIfNoSpecifiedTests=false \
+          -e
+
+      # Step 6: Tear down Selenium Grid
+      - name: Tear down Selenium Grid
+        run: docker-compose -f docker-compose.yml down  # Bring down the Selenium Grid
