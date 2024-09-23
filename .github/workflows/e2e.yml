@@ -1,13 +1,17 @@
-  Ubuntu_Chrome_Grid:
-  on:
-  workflow_dispatch: 
+name: Ubuntu_Chrome_Grid
+
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
   push:
     branches:
-      - testbranch
+      - testbranch  # Trigger workflow on push to the "testbranch"
   pull_request:
     branches:
-      - testbranch
-    needs: [ Ubuntu_APIs ]
+      - testbranch  # Trigger workflow on pull request targeting "testbranch"
+
+jobs:
+  Ubuntu_Chrome_Grid:
+    needs: [Ubuntu_APIs]  # Moved to the correct position inside the "jobs" section
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -30,7 +34,7 @@
         continue-on-error: true
         run: mvn -e test "-DdefaultElementIdentificationTimeout=5" "-DsetParallelMode=DYNAMIC" "-DsetParallel=METHODS" "-DretryMaximumNumberOfAttempts=1" "-DexecutionAddress=localhost:4444" "-DtargetOperatingSystem=LINUX" "-DtargetBrowserName=chrome" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" "-Dtest=${GLOBAL_TESTING_SCOPE}"
       - name: Upload coverage to Codecov
-        uses:  codecov/codecov-action@v4
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
