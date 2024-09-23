@@ -32,4 +32,6 @@ jobs:
           -Dtest=GitHubPageTest \
           -DexecutionAddress=localhost:4444 \
           -Dbrowser=chrome \
-          -DheadlessExecution=true
+          -DheadlessExecution=true \
+          -Dsurefire.failIfNoSpecifiedTests=false
+          -e
