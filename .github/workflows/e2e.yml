@@ -1,5 +1,6 @@
   Ubuntu_Chrome_Grid:
   on:
+  workflow_dispatch: 
   push:
     branches:
       - testbranch
