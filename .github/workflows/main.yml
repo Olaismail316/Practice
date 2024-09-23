@@ -27,9 +27,5 @@ jobs:
           maven-version: 3.9.5
 
       - name: Run GitHubPageTest
-        run: mvn test \
-          -Dtest=GitHubPageTest \
-          -DexecutionAddress=localhost:4444 \
-          -Dbrowser=chrome \
-          -DheadlessExecution=true \
-          -Dsurefire.failIfNoSpecifiedTests=false \
+        run:  mvn test -Dtest=GitHubPageTest -DexecutionAddress=localhost:4444 -Dbrowser=chrome -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
+
