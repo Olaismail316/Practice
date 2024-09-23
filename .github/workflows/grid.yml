@@ -44,14 +44,7 @@ jobs:
 
       # Step 6: Run GitHubPageTest on Selenium Grid
       - name: Run GitHubPageTest
-        run: mvn test \
-          -Dtest=GitHubPageTest \
-          -DexecutionAddress=http://localhost:4444 \
-          -Dbrowser=chrome \
-          -DheadlessExecution=true \
-          -Dsurefire.failIfNoSpecifiedTests=false \
-          -e
-
+        run: mvn test -Dtest=GitHubPageTest -DexecutionAddress=http://localhost:4444 -Dbrowser=chrome -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false
       # Step 7: Tear down Selenium Grid
       - name: Tear down Selenium Grid
         run: docker-compose -f docker-compose.yml down  # Bring down the Selenium Grid
