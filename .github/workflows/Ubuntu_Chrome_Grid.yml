@@ -1,0 +1,1 @@
+run: mvn -e test "-DexecutionAddress=localhost:4444" "-DtargetBrowserName=chrome" "-DheadlessExecution=true" "-Dtest=GoogleSearchTest"
