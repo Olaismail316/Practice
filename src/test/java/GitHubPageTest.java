@@ -44,8 +44,8 @@ public class GitHubPageTest {
 //        if (driver != null) {
 //            driver.quit();
 //        }
-        ScreenshotHelper  screenshot= new ScreenshotHelper();
-        screenshot.takeScreenshot(driver);
+//        ScreenshotHelper  screenshot= new ScreenshotHelper();
+//        screenshot.takeScreenshot(driver);
         
     }
 }
