@@ -1,4 +1,4 @@
-package pages;
+package org.pages;
 
 import com.shaft.driver.SHAFT;
 import io.qameta.allure.Step;
@@ -28,9 +28,9 @@ public class Home {
     }
 
     @Step("And I search for '{query}'.")
-    public Results searchForQuery(String query){
+    public org.pages.Results searchForQuery(String query){
         driver.element().type(searchBox, query)
                 .keyPress(searchBox, Keys.ENTER);
-        return new Results(driver);
+        return new org.pages.Results(driver);
     }
 }

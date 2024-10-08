@@ -2,12 +2,12 @@
 <suite name="Parallel Execution" parallel="tests" thread-count="1">
     <test name="firefox">
         <parameter name="browser" value="firefox" />
-        <classes>java
-            <class name="twoBrowser">
+        <classes>
+            <class name="SampleTest">
                 <methods>
-                    <include name="test2"/>
+                    <include name="checkHomePageTitleIsCorrect"/>
 
-                    <include name="test1"/>
+                    <include name="checkResultStatsIsNotEmptyAfterSearchingForAQuery"/>
 
                 </methods>
             </class>
@@ -16,10 +16,9 @@
     <test name="chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="sample">
+            <class name="SampleTest">
                 <methods>
-                    <include name="testYahooSearch"/>
-                    <include name="testGoogleSearch"/>
+                    <include name="checkResultStatsIsNotEmptyAfterSearchingForAQuery"/>
                 </methods>
             </class>
         </classes>

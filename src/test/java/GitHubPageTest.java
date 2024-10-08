@@ -1,4 +1,9 @@
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
@@ -21,10 +26,13 @@ public class GitHubPageTest {
         capabilities.setBrowserName(browser);
 
         // Connect to Selenium Grid (localhost in this case)
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/"), capabilities);
+        //driver = new RemoteWebDriver(new URL("http://localhost:4444/"), capabilities);
+        driver = new ChromeDriver();
     }
-
-    @Test
+    @Test(description = "Verify Google Title Test")
+    @Severity(SeverityLevel.CRITICAL)
+    @Feature("Google Search")
+    @Story("User should see the correct title on the homepage")
     public void openGitHubHomePage() {
         // Open GitHub's website
         driver.get("https://github.com");
@@ -33,8 +41,11 @@ public class GitHubPageTest {
 
     @AfterMethod
     public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+//        if (driver != null) {
+//            driver.quit();
+//        }
+        ScreenshotHelper  screenshot= new ScreenshotHelper();
+        screenshot.takeScreenshot(driver);
+        
     }
 }
