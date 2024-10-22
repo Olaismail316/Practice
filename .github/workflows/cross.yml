@@ -83,8 +83,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Edge" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
-
+        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Edge" -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
@@ -135,7 +134,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Firefox" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
+        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Firefox" -DisHeadless="true" 
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
@@ -181,7 +180,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Chrome" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
+        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Chrome" -DisHeadless="true" 
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
@@ -265,8 +264,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Firefox" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
-
+        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Firefox" -DisHeadless="true" 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
