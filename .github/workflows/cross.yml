@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Chrome" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
+        run: mvn test -Dtest=SampleTest -DexecutionAddress=localhost:4444 -Dbrowser=chrome -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
