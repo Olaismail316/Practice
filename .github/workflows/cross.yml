@@ -1,14 +1,6 @@
 name: E2E Regression Tests
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   Chrome_Ubuntu_Test:
@@ -40,21 +32,24 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Chrome" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-chrome_ubuntu
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Chrome Ubuntu
-          path: "target/site/allure-maven-plugin"
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 
       - name: Cleanup Docker Containers
         if: always()
@@ -90,21 +85,24 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Edge" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-edge_ubuntu
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Edge Ubuntu
-          path: "target/site/allure-maven-plugin"
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 
       - name: Cleanup Docker Containers
         if: always()
@@ -139,21 +137,24 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Firefox" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-firefox_ubuntu
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Firefox Ubuntu
-          path: "target/site/allure-maven-plugin"
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 
       - name: Cleanup Docker Containers
         if: always()
@@ -182,21 +183,24 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Chrome" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-chrome_windows
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Chrome Windows
-          path: "target/site/allure-maven-plugin"
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 
   Edge_Windows_Test:
     runs-on: windows-latest
@@ -221,22 +225,24 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Edge" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+     - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-edge_windows
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Edge Windows
-          path: "target/site/allure-maven-plugin"
-
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 
   Firefox_Windows_Test:
     runs-on: windows-latest
@@ -261,123 +267,21 @@ jobs:
         continue-on-error: true
         run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Firefox" -DisHeadless="true" -D"allure.results.directory"="target/allure-results"
 
-      - name: Upload allure-results file in Target Directory
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: target-allure-results-firefox_windows
-          path: target/allure-results
-
-      - name: Generate Allure report
-        run: mvn allure:report
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat target/site/allure-maven-plugin
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v4
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Allure Report Firefox Windows
-          path: "target/site/allure-maven-plugin"
-
-  Combine_Allure_Reports:
-    runs-on: ubuntu-latest
-    needs: [Chrome_Ubuntu_Test,Edge_Ubuntu_Test,Firefox_Ubuntu_Test,Chrome_Windows_Test,Edge_Windows_Test,Firefox_Windows_Test]
-    if: always()
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.2.0
-
-      - name: Install Allure
-        run: |
-          # Download and unzip Allure
-          curl -o allure.zip -L "https://github.com/allure-framework/allure2/releases/latest/download/allure-2.30.0.zip"
-          unzip allure.zip
-          sudo mv allure-2.30.0 /opt/allure  # Move the whole directory
-          echo "/opt/allure/bin" >> $GITHUB_PATH  # Add Allure to the PATH
-
-      # Download all Allure Files generated after every job
-      - name: Download Allure results from Chrome Ubuntu
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-chrome_ubuntu
-          path: ./target-allure-results-chrome_ubuntu
-        continue-on-error: true
-
-      - name: Download Allure results from Edge Ubuntu
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-edge_ubuntu
-          path: ./target-allure-results-edge_ubuntu
-        continue-on-error: true
-
-      - name: Download Allure results from Firefox Ubuntu
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-firefox_ubuntu
-          path: ./target-allure-results-firefox_ubuntu
-        continue-on-error: true
-
-      - name: Download Allure results from Chrome Windows
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-chrome_windows
-          path: ./target-allure-results-chrome_windows
-        continue-on-error: true
-
-      - name: Download Allure results from Edge Windows
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-edge_windows
-          path: ./target-allure-results-edge_windows
-        continue-on-error: true
-
-      - name: Download Allure results from Firefox Windows
-        uses: actions/download-artifact@v4
-        with:
-          name: target-allure-results-firefox_windows
-          path: ./target-allure-results-firefox_windows
-        continue-on-error: true
-
-      # Combine all Allure Files of all Jobs into one directory
-      - name: Combine Chrome Ubuntu Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-chrome_ubuntu/* ./allure-results/
-        continue-on-error: true
-      - name: Combine Edge Ubuntu Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-edge_ubuntu/* ./allure-results/
-        continue-on-error: true
-      - name: Combine Firefox Ubuntu Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-firefox_ubuntu/* ./allure-results/
-        continue-on-error: true
-      - name: Combine Chrome Windows Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-chrome_windows/* ./allure-results/
-        continue-on-error: true
-      - name: Combine Edge Windows Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-edge_windows/* ./allure-results/
-        continue-on-error: true
-      - name: Combine Firefox Windows Allure results into Combined Directory
-        run: |
-          mkdir -p ./allure-results
-          cp -r ./target-allure-results-firefox_windows/* ./allure-results/
-        continue-on-error: true
-
-      # Generate the Allure Report from the Combined Directory
-      - name: Generate Allure report
-        run: allure generate ./allure-results --clean -o ./allure-report
-
-      - name: Copy patch file to allure-maven-plugin folder
-        run: cp src/main/resources/allow-file-access_open-report_chrome_windows.bat ./allure-report
-
-      - name: Upload Combined Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: Combined Allure Report
-          path: ./allure-report
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
