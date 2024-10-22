@@ -95,7 +95,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Ubuntu_Chrome_Grid_Allure
+          name: Edge_Ubuntu_Test
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
@@ -147,7 +147,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Ubuntu_Chrome_Grid_Allure
+          name: Ubuntu_firefox_Grid_Allure
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
@@ -193,7 +193,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Ubuntu_Chrome_Grid_Allure
+          name: win_Chrome_Grid_Allure
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
@@ -235,7 +235,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Ubuntu_Chrome_Grid_Allure
+          name: win_edge_Grid_Allure
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
@@ -276,7 +276,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Ubuntu_Chrome_Grid_Allure
+          name: win_fire_Grid_Allure
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
