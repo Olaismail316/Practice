@@ -1,4 +1,4 @@
-name: Run Sampletest
+name: Run SampleTest
 
 on:
   workflow_dispatch:  # Manual trigger from GitHub Actions UI

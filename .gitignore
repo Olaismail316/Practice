@@ -36,3 +36,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+*.html
+allure-results/f8a0d960-bf2e-4caa-a237-d1ed00bd11c7-container.json
+allure-results/f24cc6c4-f1f8-4d8d-b5a1-a58de33fb3fd-attachment.txt
+execution-summary/ExecutionSummaryReport_23-10-2024_11-15-59-0535-AM.html
+execution-summary/ExecutionSummaryReport_23-10-2024_11-15-59-0535-AM.html

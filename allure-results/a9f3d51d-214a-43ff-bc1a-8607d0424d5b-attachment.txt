@@ -1,0 +1,222 @@
+[INFO ] 2024-10-23 11:51:08.533 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    Powered by [1mSHAFT v.8.3.20240829[22m                                                    
+                                   Visit SHAFT's user guide [4mhttps://shafthq.github.io/[24m to learn more                                   
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:08.536 [] ReportManager - Checking for engine updates...
+[INFO ] 2024-10-23 11:51:08.545 [] ReportManager - Initializing Summary Reporting Environment...
+[INFO ] 2024-10-23 11:51:08.551 [main] ReportManager - TestNG run detected...
+[INFO ] 2024-10-23 11:51:08.551 [] ReportManager - Initializing Allure Reporting Environment...
+[INFO ] 2024-10-23 11:51:08.568 [] ReportManager - Executing: "chmod u+x generate_allure_report.sh" locally.
+[INFO ] 2024-10-23 11:51:08.643 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                             Starting execution of suite setup configuration method                                             
+                                          'com.shaft.listeners.internal.ConfigurationHelper.suiteSetup'                                          
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:08.659 [main] ReportManager - Initializing Properties...
+[INFO ] 2024-10-23 11:51:08.693 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                             Starting execution of before class configuration method                                             
+                                                            'SampleTest.beforeClass'                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:08.696 [main] ReportManager - Loaded Test Data: "src/test/resources/testDataFiles/simpleJSON.json".
+[INFO ] 2024-10-23 11:51:08.696 [main] ReportManager - Successfully created attachment 'Test Data - JSON'
+[INFO ] 2024-10-23 11:51:08.698 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Current Method log: beforeClass'
+[INFO ] 2024-10-23 11:51:08.704 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                            Starting execution of before method configuration method                                            
+                                                            'SampleTest.beforeMethod'                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:08.713 [main] ReportManager - Setting "targetOperatingSystem" property with "mac".
+[INFO ] 2024-10-23 11:51:08.954 [] ReportManager - Loaded OpenCV "opencv_java490".
+[DEBUG] 2024-10-23 11:51:09.186 [] BasicClientConnectionManager - Get connection for route {s}->https://api.github.com:443
+[DEBUG] 2024-10-23 11:51:09.213 [] DefaultClientConnectionOperator - Connecting to api.github.com:443
+[INFO ] 2024-10-23 11:51:09.226 [main] ReportManager - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--disable-search-engine-cho..., --remote-allow-origins=*, --enable-automation, --disable-background-timer-..., --disable-backgrounding-occ..., --disable-features=Optimiza..., --disable-hang-monitor, --disable-domain-reliability, --disable-renderer-backgrou..., --metrics-recording-only, --no-first-run, --no-default-browser-check, --silent-debugger-extension..., --disable-extensions, --disable-component-extensi..., --disable-dev-shm-usage, --disable-ipc-flooding-prot..., --disable-background-networ..., --mute-audio, --disable-breakpad, --ignore-certificate-errors, --disable-device-discovery-..., --force-color-profile=srgb, --hide-scrollbars, --host-resolver-rules, --no-pings, --disable-sync, --disable-field-trial-config, --enable-features=NetworkSe..., --enable-features=NetworkSe..., --enable-use-zoom-for-dsf, --log-net-log, --net-log-capture-mode, --disable-client-side-phish..., --disable-default-apps, --remote-debugging-pipe, --no-sandbox, --window-position=0,0, --window-size=1920,1080], extensions: [], prefs: {download.default_directory: /Users/olaelnasharty/IdeaPr..., download.prompt_for_download: false, profile.default_content_settings.popups: 0}}, pageLoadStrategy: normal, timeouts: {pageLoad: 60000, script: 60000}, unhandledPromptBehavior: ignore, webSocketUrl: true}
+[INFO ] 2024-10-23 11:51:09.226 [main] ReportManager - Attempting to run locally on: "Mac | Chrome".
+[INFO ] 2024-10-23 11:51:09.226 [main] ReportManager - Identifying OS/Driver combination. Please note that if a new browser/driver executable will be downloaded it may take some time depending on your connection...
+[DEBUG] 2024-10-23 11:51:09.441 [] RequestAddCookies - CookieSpec selected: ignoreCookies
+[DEBUG] 2024-10-23 11:51:09.442 [] RequestAuthCache - Auth cache not set in the context
+[DEBUG] 2024-10-23 11:51:09.442 [] RequestTargetAuthentication - Target auth state: UNCHALLENGED
+[DEBUG] 2024-10-23 11:51:09.442 [] RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+[DEBUG] 2024-10-23 11:51:09.443 [] DefaultClientConnection - Sending request: GET /repos/ShaftHQ/SHAFT_ENGINE/releases/latest HTTP/1.1
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "GET /repos/ShaftHQ/SHAFT_ENGINE/releases/latest HTTP/1.1[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "Accept: */*[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "Host: api.github.com[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "Connection: Keep-Alive[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "User-Agent: Apache-HttpClient/4.5.13 (Java/21.0.2)[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] wire -  >> "[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> GET /repos/ShaftHQ/SHAFT_ENGINE/releases/latest HTTP/1.1
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> Accept: */*
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> Host: api.github.com
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> Connection: Keep-Alive
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> User-Agent: Apache-HttpClient/4.5.13 (Java/21.0.2)
+[DEBUG] 2024-10-23 11:51:09.443 [] headers - >> Accept-Encoding: gzip,deflate
+[DEBUG] 2024-10-23 11:51:09.707 [] wire -  << "HTTP/1.1 200 OK[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Date: Wed, 23 Oct 2024 08:51:09 GMT[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Content-Type: application/json; charset=utf-8[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Cache-Control: public, max-age=60, s-maxage=60[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Vary: Accept,Accept-Encoding, Accept, X-Requested-With[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "ETag: W/"229c6d88984f7573d9770734380055b4f670810ef4acd727c318482c07ee643f"[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Last-Modified: Wed, 16 Oct 2024 05:33:27 GMT[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "X-GitHub-Media-Type: github.v3; format=json[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "x-github-api-version-selected: 2022-11-28[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Access-Control-Allow-Origin: *[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "Strict-Transport-Security: max-age=31536000; includeSubdomains; preload[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "X-Frame-Options: deny[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "X-Content-Type-Options: nosniff[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.708 [] wire -  << "X-XSS-Protection: 0[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Content-Security-Policy: default-src 'none'[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Content-Encoding: gzip[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Server: github.com[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-RateLimit-Limit: 60[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-RateLimit-Remaining: 57[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-RateLimit-Reset: 1729674936[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-RateLimit-Resource: core[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-RateLimit-Used: 3[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Accept-Ranges: bytes[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "Content-Length: 1125[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "X-GitHub-Request-Id: F70B:619C2:1CFC4BF:1D866E7:6718B8FD[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] wire -  << "[\r][\n]"
+[DEBUG] 2024-10-23 11:51:09.709 [] DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << HTTP/1.1 200 OK
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Date: Wed, 23 Oct 2024 08:51:09 GMT
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Content-Type: application/json; charset=utf-8
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Cache-Control: public, max-age=60, s-maxage=60
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Vary: Accept,Accept-Encoding, Accept, X-Requested-With
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << ETag: W/"229c6d88984f7573d9770734380055b4f670810ef4acd727c318482c07ee643f"
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Last-Modified: Wed, 16 Oct 2024 05:33:27 GMT
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << X-GitHub-Media-Type: github.v3; format=json
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << x-github-api-version-selected: 2022-11-28
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Access-Control-Allow-Origin: *
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << X-Frame-Options: deny
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << X-Content-Type-Options: nosniff
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << X-XSS-Protection: 0
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+[DEBUG] 2024-10-23 11:51:09.709 [] headers - << Content-Security-Policy: default-src 'none'
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << Content-Encoding: gzip
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << Server: github.com
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-RateLimit-Limit: 60
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-RateLimit-Remaining: 57
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-RateLimit-Reset: 1729674936
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-RateLimit-Resource: core
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-RateLimit-Used: 3
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << Accept-Ranges: bytes
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << Content-Length: 1125
+[DEBUG] 2024-10-23 11:51:09.710 [] headers - << X-GitHub-Request-Id: F70B:619C2:1CFC4BF:1D866E7:6718B8FD
+[DEBUG] 2024-10-23 11:51:09.715 [] RestAssuredHttpBuilder - Parsing response as: application/json; charset=utf-8
+[DEBUG] 2024-10-23 11:51:09.715 [] wire -  << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0x3][0xb5][0x97][\r]o[0xdb]8[0xc][0x86][0xff][0x8a][0xe0]a8[0xa0][0xa8][0xed]8[0xdf]50[0xec][0xda][0xb5][0xfb]D[0xdb][0xdb][0x16][0xe0][0x80][0xed][0x86]@[0xb6][0x19][[0x9d],y[0x92][0x9c]\[0x16][0xf4][0xbf][0x1f][0xa5]8"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << "[0xb9]&h[0xd3][0xa1][0xc9]P[0xc0][0x95][0x1d][0xeb]![0xf5][0x92]"[0xe5][0x85]W+[0xee][0xc5]^aL[0xa5][0xe3]0[0xa4][0x15][0xb]rf[0x8a]:[0x9]RY[0x86][\n]"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << "*[0xa9][0xc3][0xcf][0x5][0x9d][0x98][0xb7][0x1f][0xc3][0xcf]oO_[0x8f][0xc6][0x17]Wo[0xde]]][0xe0]O[0x1c][0xa8][0x6][0x1d]F[0xc3]V[0xd4][0x1d][0xf6]z[0x1d][0xef][0xd8][0xa3]Z[0x83][0xd1][0xe3][0xc3]1[0xc3]%[0x11][0xd1]u[0xc5]%[0xcd][0xb6][0xd0][0xcb][0x87][0xfa][0xc9].7[0xf8][0xc5]KAK8[0xe6]4[0x1]~[0x8b][0xb6][\n]"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << "S[0xf2]-KwD[0xd9]-[0x87][0xa1]y8[0xc][0xba]A[0xbb][0xd5][0xee]F[0xad][0xa8][0xef]'`(2Y[0xe6][0xc5]k[0xa9]P[0xa9][0xda][0x14]Ry[0xf1][0xc2][0xe3]2g[0x2]C[0xb0][0xb4][0xe0][0xd3][0xd4]0)[0xf4][0xd7]D[0x9a]o[0xcd][0xb4]n4<[0x19][0xb6][0x87][0xed]cO[0xc8][0xc][0xc6][0x96][0xe4]][0x9e]_[0xf6]?[0x96]'[0xad][0xab][0xf3][0x8b][0xee][0xf5]([0x9f]_[0x9f][0xbf]{a[0x3]0[0xa5][0x86][0xaa][0xed][0x0][0xb8][0x87]+[0x95]j[\r]*[0x95][0xc2][0x80]0.[0xc6]L[0x84]Q[0xaf][0xd3][0x1f][0xbe][0x9c][0xbe][0xe8]"!W[\r][0xc3][0x99][0xb1][0xc2][0xef]J[0x10][0xb][0xd3][0xe1][0xa6][0xeb][0xcf]{g[0xe8][0xfc][0xf3][0xde][0xf9][0xa3]J[0xd2][0xaa][0xda][0x9e][0x8c]s&[0x92]s9C[0xee][0xf6]26ss[0xa7][0xe9]p[\r]Y[0x3][0x99][0xc8][0xf7][0x7]"d[0x11]JS[0x0]j[0x8c]K[0xb7][0xc9][0x92]3[0xfd]X[0xca][0xef]v[0xd5][0x1][0x16]([0xa2]6[0x18][[0x8b][0xd4][0x18].[0x5][0xdb][0xc9][0xbe][0xb5]7wC[0x1b][0x4]:;[0x13][0xe8][0xe7][0xc2]me[0xc7][0xae][0x13][0x9d]*V[0xb9],[0xdb]G[0x90][\r][0x10][0x82][0xa5][0xca][0xa9]`?[0xe9][0xde]`[0x4]i[0xe4][0xb9][0xda][0xb3][0x8f][0x83][0xe][0x80] [0x98]b[0xaa][0xef]EZ[0x12][0x16]a[0xa5][0xd8][0x94][0xa6]s+[0xa3][0x82][0x14][0xd8][0x14]c[0xb4]?}[0xb][0x85]p3[0xaf][0x0]7[0xdf][0x99]4xc[0xe3]<[0x9e]2[0x98][0x8d][0x9b][0xc7]U[0x9d]p[0x96][0xda]P2[0x3]c[0x9a][0x95][0xb6]|L([0xd7]p{[0xb7]B|[0xba][0x18][0x9f][0x9d]_[0xbf]z[0x3][0xa3][0xbe][0xee]~[0x98]^[0xf1][0xf7][0x16]M[0xf3][0xb1]-v[0x88][0xbf][0xaf]Ja[0xe2][0xe5]`[0xc6]X[0x17]Jf[0x98].[0xf0][0xb5][0x92]"[0x1f][0xc1][0xf]O[0xca][0x14][0xf6][0x87][0xc6][0x85]c[0xaf]R[0xd0][0xf4][0x86][0xf5][0xa3]T[0x1]5[0xa8][0x15][0xc5][0xb7]<[[0x18][0xfd][0xa8][0xe5]G[0xfd]Q[0xab][0x17]w:q+[0xfa][0x82]|[0xb7]*]<[0xf8]V{`[0xdf]j[0xda]A[0xfc][0xf5][0x9b]][0x8a]J([0xdf].[0xd4][0xbf][0xde][0xc1][0x9a][0xf9][0xf7]V[0xeb][0x9f][0xac][0xda][0x8b][0xdd][0xcc][0xbf][0x97][0x9d][0xc8]l[0x8e]:<{F[0xfe].[0xa8][0xf9]C[0x93]W[0x5][0x15]9d[0xff][0x88]#rV[0x97][0x15][0xc1][\r][0x10][0xd0][0x8a][0xa6][0x5][0x4]%[0xc5][0xe4][\r]*^c[0x8f][0xd0][0xb1][0xbb][0xf3]o[0xb0]@g2[0xf5][0x97]O[0xc9]D[0xc9][0x92]t[0x82][0xa8][0x15][0xb4][0x88][0x91][0xcb]QD[0x92]9[0xf9]3[0x83][\n]"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << "DF[0xb1][0x18][0x13]&[0xc8][0xaa][0xc5]?[0xd6][0xc9][0xaa][0x9a][0xf3]0[0x1a][0xf4][0x87]k[0x98][0xc][0xd2]:[0xad][0xcb][0x4]T[0xbc][0x1a][0xf8][0x6][0xb4][0x11][0xf9][0xd2][0xfa] [0x88]N[0x96][0xd6][0x7][0xd8][0xf7][0x82][0x3]X[0x1f][0xc]v[[0xb7][0x1a][0xfc]6[0xdb][0xfd][0x87]#[0xa1]k[0x5][0x13][0xa6] ^[\r]6t[0xe8][0x4][0xbd]U[0x10]z[0x7]Q[0xa1][0xb3][0xe1][0xc9]M-[0x98][0x89][0xdd][0xd5]O0[0xe8].[0xf2]h(B[[0x18]y7j[0xef][0x1f][0xf9]A[0xfb][0xe1][0xf5]of[0xe2]Z[0x84][0xcd]T<[0xb0][0x8][0xd1][0xee]T[0xa8]X*[0xed]y[0x6][0xcb][0x14][0xa8][0xdf][0x96][0x13][0xff][0xef][0x6][0xac][0x8d][0x1]T[0xb4][0xc][\n]"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << "[0xa0][0x1c][0x4][0xab][0xcb]x=[0xf2]g[0x90][0xac]6d/[0xe8],[0xf7]c/[0xe8][0x1e] ('k[0x15][0xac][0x3][0xe5]\[0xff][0xe0][0xb1][0xbb][0xfa][0xb8]x[0x1][0xa9][0x91][0xca][0xbf]Y[0xda][0xc6][0xbd][0xb8]L[0xc3][0x93] [0xc2][0xc1][0xde][0xa5]`[0xb8][0x99][0x10][0xa5]L[0xbf]3#[0xe3][0xe6]?[0xda]W[0xb0][0xce][0xc5][0xee]:[0x17][0xf1][0x8]|[0x0][0xd3].[0xf8][0x2]fd[0x84]=[0x91][0xe0][0xd2]+<`$[0x8c]33'3[0xfc]P![0x92]g$[0xc5]O[0x11]E[0x12][0x98]XO[0xb0]K[0xe2])[0x8d]L8[0xcd]5[0xc9]jeoT-[0xc]+[0x81][0x10][0xe7][0xd1]iQf_[0xa8][0x90]R<[0xa5].[0xba]@[0x9c]f[0x19][0xf9][0xb][0x14][0x1a],[0xa9]H[0x81][0x8c][0x14]EQ[0xd0][0x12][0x16][0xda]O[0xf0][0xa3][0xc6][0xe2]xV3[0x9e][0xd9][0x8c][0x94][0x8a][0x9c][0x81]18[0xbc][0x10]Y%[0x99]0[0xe4]TP>[0xd7]L;w>[0xcc][0x15][0xc3][0x13][0xaf][0xbe][0xa2]9[0x14]O[0xf0][0xa8][0xe3][0xea][0xd5][0x84][0xfd]K[0x9a][0xce]@r[0xc0][0xad][0xe0][0xe]b[0xce][0xc0][0xa5],h[0x82][0x17][0x6]O[0xa0][0xf][0xb1][0x6][0xd9][0xbf][0xa3][0xa3][0xd7][0xd8][0x18][0x9a]^[0x85][0xdf],GG[0xf1]/[0xb7][0x14][0x17]6[0x5]w[0xba]a+r[0xdf]EA[0x10][0xdc]w[\n]"
+[DEBUG] 2024-10-23 11:51:09.716 [] wire -  << ")[0xf1][0xc0][0xe6][0x8e][0xa7][0xa9][0xc4][0xc0]yq[0xf7][0xf6]?[0xd2]u[0xbe]B[0xa8][0xe][0x0][0x0]"
+[DEBUG] 2024-10-23 11:51:09.716 [] RestAssuredHttpBuilder - Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+[DEBUG] 2024-10-23 11:51:09.748 [] BasicClientConnectionManager - Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@68c296ef
+[DEBUG] 2024-10-23 11:51:09.748 [] BasicClientConnectionManager - Connection can be kept alive indefinitely
+[WARN ] 2024-10-23 11:51:10.063 [] ReportManager - 
+[1;33m------------------------------------------------------------------------------------------------------------------------------------------------
+                                          ⚠️ You're using an outdated engine version "8.3.20240829" ⚠️                                          
+                               Kindly upgrade to the latest one "8.4.20241016-beta" to ensure the best experience.                               
+                           For more information click here: https://github.com/ShaftHQ/SHAFT_ENGINE/releases/latest .                           
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[WARN ] 2024-10-23 11:51:10.172 [main] ReportManager - Oct 23, 2024 11:51:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+[WARN ] 2024-10-23 11:51:10.173 [main] ReportManager - WARNING: Unable to find an exact match for CDP version 130, returning the closest version; found: 128; Please update to a Selenium version that supports CDP version 130
+[INFO ] 2024-10-23 11:51:10.174 [main] ReportManager - Successfully Opened: "Mac | Chrome".
+[INFO ] 2024-10-23 11:51:10.191 [main] ReportManager - Target URL: "https://www.google.com/"
+[INFO ] 2024-10-23 11:51:10.202 [main] ReportManager - Initial URL: "about:blank"
+[INFO ] 2024-10-23 11:51:11.185 [main] ReportManager - Navigate to url "https://www.google.com/".
+[INFO ] 2024-10-23 11:51:11.195 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Current Method log: beforeMethod'
+[INFO ] 2024-10-23 11:51:11.244 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                        Starting Execution: '1 out of 2' test cases in the current suite                                        
+                                              Test Method: 'SampleTest.checkHomePageTitleIsCorrect'                                              
+                                           Test Description: 'Check that Home Page Title is correct.'                                           
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:11.251 [main] ReportManager - Verify that the browser title is equal to "Google".
+[DEBUG] 2024-10-23 11:51:11.260 [main] ReportManager - Expected "Google", and actual "Google"
+[DEBUG] 2024-10-23 11:51:12.040 [Finalizer] DefaultClientConnection - Connection 0.0.0.0:63243<->140.82.121.5:443 closed
+[INFO ] 2024-10-23 11:51:12.393 [main] ReportManager - Successfully created attachment 'Screenshot - Verify_11-51-12-392_23102024'
+[INFO ] 2024-10-23 11:51:12.393 [main] ReportManager - Expected "Google", and actual "Google"
+[INFO ] 2024-10-23 11:51:12.394 [main] ReportManager - Verification passed
+[INFO ] 2024-10-23 11:51:12.395 [main] ReportManager - Verification passed
+[INFO ] 2024-10-23 11:51:12.397 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Current Method log: checkHomePageTitleIsCorrect'
+[INFO ] 2024-10-23 11:51:12.397 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                   Finished Execution of Test Method: 'SampleTest.checkHomePageTitleIsCorrect'                                   
+                                           Test Description: 'Check that Home Page Title is correct.'                                           
+                                                              Test Status: 'Passed'                                                              
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:12.402 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                             Starting execution of after method configuration method                                             
+                                                            'SampleTest.afterMethod'                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:12.404 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                            Starting execution of before method configuration method                                            
+                                                            'SampleTest.beforeMethod'                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:12.405 [main] ReportManager - Setting "targetOperatingSystem" property with "mac".
+[INFO ] 2024-10-23 11:51:12.914 [main] ReportManager - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--disable-search-engine-cho..., --remote-allow-origins=*, --enable-automation, --disable-background-timer-..., --disable-backgrounding-occ..., --disable-features=Optimiza..., --disable-hang-monitor, --disable-domain-reliability, --disable-renderer-backgrou..., --metrics-recording-only, --no-first-run, --no-default-browser-check, --silent-debugger-extension..., --disable-extensions, --disable-component-extensi..., --disable-dev-shm-usage, --disable-ipc-flooding-prot..., --disable-background-networ..., --mute-audio, --disable-breakpad, --ignore-certificate-errors, --disable-device-discovery-..., --force-color-profile=srgb, --hide-scrollbars, --host-resolver-rules, --no-pings, --disable-sync, --disable-field-trial-config, --enable-features=NetworkSe..., --enable-features=NetworkSe..., --enable-use-zoom-for-dsf, --log-net-log, --net-log-capture-mode, --disable-client-side-phish..., --disable-default-apps, --remote-debugging-pipe, --no-sandbox, --window-position=0,0, --window-size=1920,1080], extensions: [], prefs: {download.default_directory: /Users/olaelnasharty/IdeaPr..., download.prompt_for_download: false, profile.default_content_settings.popups: 0}}, pageLoadStrategy: normal, timeouts: {pageLoad: 60000, script: 60000}, unhandledPromptBehavior: ignore, webSocketUrl: true}
+[INFO ] 2024-10-23 11:51:12.915 [main] ReportManager - Attempting to run locally on: "Mac | Chrome".
+[INFO ] 2024-10-23 11:51:12.916 [main] ReportManager - Identifying OS/Driver combination. Please note that if a new browser/driver executable will be downloaded it may take some time depending on your connection...
+[WARN ] 2024-10-23 11:51:13.562 [main] ReportManager - Oct 23, 2024 11:51:13 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+[WARN ] 2024-10-23 11:51:13.562 [main] ReportManager - WARNING: Unable to find an exact match for CDP version 130, returning the closest version; found: 128; Please update to a Selenium version that supports CDP version 130
+[INFO ] 2024-10-23 11:51:13.563 [main] ReportManager - Successfully Opened: "Mac | Chrome".
+[INFO ] 2024-10-23 11:51:13.567 [main] ReportManager - Target URL: "https://www.google.com/"
+[INFO ] 2024-10-23 11:51:13.576 [main] ReportManager - Initial URL: "about:blank"
+[INFO ] 2024-10-23 11:51:14.835 [main] ReportManager - Navigate to url "https://www.google.com/".
+[INFO ] 2024-10-23 11:51:14.844 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Current Method log: beforeMethod'
+[INFO ] 2024-10-23 11:51:14.853 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                        Starting Execution: '2 out of 2' test cases in the current suite                                        
+                                   Test Method: 'SampleTest.checkResultStatsIsNotEmptyAfterSearchingForAQuery'                                   
+                              Test Description: 'Check that Result Stats is not empty after searching for a query.'                              
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[DEBUG] 2024-10-23 11:51:14.906 [main] ReportManager - Text cleared Using Native Clear
+[INFO ] 2024-10-23 11:51:14.959 [main] ReportManager - Type "SHAFT_Engine" into "بحث".
+[INFO ] 2024-10-23 11:51:15.122 [main] ReportManager - Key press "ENTER" against "بحث".
+[INFO ] 2024-10-23 11:51:15.123 [main] ReportManager - Assert that the element located by "By.id: result-stats" text does not equal "".
+[DEBUG] 2024-10-23 11:51:15.921 [main] ReportManager - Expected "", and actual "حوالى 537,000 نتيجة (0.22 ثانية) "
+[INFO ] 2024-10-23 11:51:18.330 [main] ReportManager - Successfully created attachment 'Screenshot - Assert_11-51-18-329_23102024'
+[INFO ] 2024-10-23 11:51:18.331 [main] ReportManager - Expected "", and actual "حوالى 537,000 نتيجة (0.22 ثانية) "
+[INFO ] 2024-10-23 11:51:18.331 [main] ReportManager - Assertion passed
+[INFO ] 2024-10-23 11:51:18.331 [main] ReportManager - Assertion passed
+[INFO ] 2024-10-23 11:51:18.331 [main] ReportManager - Check that result stats is not empty
+[INFO ] 2024-10-23 11:51:18.332 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Current Method log: checkResultStatsIsNotEmptyAfterSearchingForAQuery'
+[INFO ] 2024-10-23 11:51:18.332 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                        Finished Execution of Test Method: 'SampleTest.checkResultStatsIsNotEmptyAfterSearchingForAQuery'                        
+                              Test Description: 'Check that Result Stats is not empty after searching for a query.'                              
+                                                              Test Status: 'Passed'                                                              
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:18.333 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                             Starting execution of after method configuration method                                             
+                                                            'SampleTest.afterMethod'                                                            
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:18.335 [main] ReportManager - 
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                           Starting execution of engine tear down configuration method                                           
+                                        'com.shaft.listeners.internal.ConfigurationHelper.engineTearDown'                                        
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[INFO ] 2024-10-23 11:51:18.335 [main] ReportManager - Successfully created attachment 'SHAFT Engine Logs - Execution log'
