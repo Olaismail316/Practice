@@ -84,7 +84,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Edge" -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
+        run: mvn clean test -Dtest="SampleTest1" -DexecutionType="Remote" -DbrowserType="Edge" -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
@@ -135,7 +135,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Remote" -DbrowserType="Firefox" -DisHeadless="true" -Dsurefire.failIfNoSpecifiedTests=false -e
+        run: mvn clean test -Dtest="SampleTest2" -DexecutionType="Remote" -DbrowserType="Firefox" -DisHeadless="true" -Dsurefire.failIfNoSpecifiedTests=false -e
 
 
       - name: Upload coverage to Codecov
@@ -182,7 +182,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Chrome" -DisHeadless="true" 
+        run: mvn clean test -Dtest="SampleTest3" -DexecutionType="Local" -DbrowserType="Chrome" -DisHeadless="true" 
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
@@ -224,7 +224,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn clean test -Dtest="SampleTest" -DexecutionType="Local" -DbrowserType="Edge" -DisHeadless="true" 
+        run: mvn clean test -Dtest="SampleTest4" -DexecutionType="Local" -DbrowserType="Edge" -DisHeadless="true" 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
