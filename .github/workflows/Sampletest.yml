@@ -28,3 +28,22 @@ jobs:
 
       - name: Run GitHubPageTest
         run:  mvn test -Dtest=SampleTest -DexecutionAddress=localhost:4444 -Dbrowser=chrome -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
+        
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Ubuntu_Chrome_Grid_Allure
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
