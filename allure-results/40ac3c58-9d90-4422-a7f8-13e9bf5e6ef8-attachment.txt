@@ -1,0 +1,13 @@
+
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                        Starting Execution: '1 out of 2' test cases in the current suite                                        
+                                             Test Method: 'SampleTest3.checkHomePageTitleIsCorrect'                                             
+                                           Test Description: 'Check that Home Page Title is correct.'                                           
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[ReportManager] Verify that the browser title is equal to "Google". @23-10-2024 11:15:48.0819 AM
+[ReportManager] Expected "Google", and actual "Google" @23-10-2024 11:15:48.0829 AM
+[ReportManager] Successfully created attachment 'Screenshot - Verify_11-15-50-169_23102024' @23-10-2024 11:15:50.0170 AM
+[ReportManager] Expected "Google", and actual "Google" @23-10-2024 11:15:50.0170 AM
+[ReportManager] Verification passed @23-10-2024 11:15:50.0171 AM
+[ReportManager] Verification passed @23-10-2024 11:15:50.0172 A
