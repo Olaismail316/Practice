@@ -23,13 +23,6 @@ jobs:
       - name: Run Tests
         continue-on-error: true
         run: mvn test -DtargetBrowserName="chrome" -DexecutionAddress="local" -DtargetOperatingSystem="LINUX" -DheadlessExecution="true" -DwhenToTakePageSourceSnapshot="FailuresOnly" -DscreenshotParams_whenToTakeAScreenshot="FailuresOnly" -Dtest="${TESTING_SCOPE}"
-     - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
-          files: ./target/jacoco/jacoco.xml
-          verbose: true
       - name: Upload Allure Report as Pipeline Artifact
         if: always()
         uses: actions/upload-artifact@v4
