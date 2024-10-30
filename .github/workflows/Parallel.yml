@@ -7,13 +7,13 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 6  # Set parallel limit if needed
       matrix:
         browser: [chrome, firefox, edge]
         test_class: [SampleTest, SampleTest1, SampleTest2]
         parallel_mode: [METHODS]
         os: [LINUX]
         java_version: [21]
-        max-parallel: 6  # Set parallel limit if needed
 
     steps:
       - name: Checkout Code
@@ -41,17 +41,8 @@ jobs:
       - name: Run Tests on ${{ matrix.browser }} with ${{ matrix.test_class }}
         continue-on-error: true
         run: |
-          mvn -e test \
-            "-DdefaultElementIdentificationTimeout=5" \
-            "-DsetParallelMode=${{ matrix.parallel_mode }}" \
-            "-DsetParallel=METHODS" \
-            "-DretryMaximumNumberOfAttempts=1" \
-            "-DexecutionAddress=localhost:4444" \
-            "-DtargetOperatingSystem=${{ matrix.os }}" \
-            "-DtargetBrowserName=${{ matrix.browser }}" \
-            "-DheadlessExecution=true" \
-            "-DgenerateAllureReportArchive=true" \
-            "-Dtest=${{ matrix.test_class }}"
+          mvn -e test "-DdefaultElementIdentificationTimeout=5" "-DsetParallelMode=${{ matrix.parallel_mode }}" "-DsetParallel=METHODS" "-DretryMaximumNumberOfAttempts=1" "-DexecutionAddress=localhost:4444"
+            "-DtargetOperatingSystem=${{ matrix.os }}"  "-DtargetBrowserName=${{ matrix.browser }}" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" "-Dtest=${{ matrix.test_class }}"
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v4
