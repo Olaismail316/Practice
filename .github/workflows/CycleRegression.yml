@@ -23,16 +23,24 @@ jobs:
       - name: Run Tests
         continue-on-error: true
         run: mvn test -DtargetBrowserName="chrome" -DexecutionAddress="local" -DtargetOperatingSystem="LINUX" -DheadlessExecution="true" -DwhenToTakePageSourceSnapshot="FailuresOnly" -DscreenshotParams_whenToTakeAScreenshot="FailuresOnly" -Dtest="${TESTING_SCOPE}"
-      - name: Upload Allure Report as Artifact
-        uses: actions/upload-artifact@v3
+     - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: Chrome_Linux_Allure
-          path: "allure-report/*_AllureReport.html"
-      - name: Upload Execution Summary Report as Artifact
-        uses: actions/upload-artifact@v3
+          path: "allure-report/*.html"
+      - name: Chrome_Linux_Summary
+        uses: Chrome_Linux_Summary/action@v2
         with:
-          name: Chrome_Linux_Summary
-          path: "execution-summary/ExecutionSummaryReport_*.html"
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
 #      - name: Publish Report
 #        continue-on-error: true
 #        uses: dorny/test-reporter@v1
