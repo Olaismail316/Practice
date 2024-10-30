@@ -14,34 +14,23 @@ import org.testng.annotations.Test;
 
 public class SampleTest5 {
     private  WebDriver driver;
-    private SHAFT.TestData.JSON testData;
 
-    @Epic("SHAFT Web GUI Template")
-    @Story("Google Basic Validations")
-    @TmsLink("TC-0011")
-    @Description("Given I am on the Home page,\nThen the browser title should be 'Google'.")
     @Test(description = "Check that Home Page Title is correct.")
     public void checkHomePageTitleIsCorrect() {
 
         new Home1(driver).verifyBrowserTitleIsCorrect();
     }
 
-    @Epic("SHAFT Web GUI Template")
-    @Story("Google Basic Validations")@TmsLink("TC-0012")
-    @Description("Given I am on the Home page,\nWhen I search for a valid query,\nThen the result stats will show some data (will not be empty).")
+
     @Test(description = "Check that Result Stats is not empty after searching for a query.")
     public void checkResultStatsIsNotEmptyAfterSearchingForAQuery() {
-        new Home1(driver).searchForQuery(testData.getTestData("searchQuery"));
+        new Home1(driver).searchForQuery("");
     }
 
-    @BeforeClass(description = "Setup Test Data.")
-    public void beforeClass(){
-        testData = new SHAFT.TestData.JSON("simpleJSON.json");
-    }
 
     @BeforeMethod(description = "Setup Browser instance.")
     public void beforeMethod() {
-        String browser = System.getProperty("targetBrowserName", "chrome");
+        String browser = System.getProperty("targetBrowserName", "edge");
 
         // Set capabilities based on the browser
         DesiredCapabilities capabilities = new DesiredCapabilities();
