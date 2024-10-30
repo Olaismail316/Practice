@@ -51,8 +51,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Firefox_Linux_Test:
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -96,8 +94,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Edge_Windows_Test:
     runs-on: windows-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -141,8 +137,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Safari_MacOS_Test:
     runs-on: macos-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -186,8 +180,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Chrome_Grid_Test:
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -233,8 +225,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Firefox_Grid_Test:
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -280,8 +270,6 @@ jobs:
             target/surefire-reports/TEST-*.xml
   E2E_Edge_Grid_Test:
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
