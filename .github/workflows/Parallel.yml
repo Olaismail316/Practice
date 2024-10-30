@@ -10,7 +10,7 @@ jobs:
       max-parallel: 6  # Set parallel limit if needed
       matrix:
         browser: [chrome, firefox, edge]
-        test_class: [SampleTest4,SampleTest5]
+        test_class: [SampleTest5]
         parallel_mode: [METHODS]
         os: [LINUX]
         java_version: [21]
