@@ -1,0 +1,15 @@
+
+[0;7m------------------------------------------------------------------------------------------------------------------------------------------------
+                                        Starting Execution: '2 out of 2' test cases in the current suite                                        
+                                   Test Method: 'SampleTest.checkResultStatsIsNotEmptyAfterSearchingForAQuery'                                   
+                              Test Description: 'Check that Result Stats is not empty after searching for a query.'                              
+------------------------------------------------------------------------------------------------------------------------------------------------
+[0m
+[ReportManager] Type "بحث" @03-11-2024 10:35:51.0939 AM
+[ReportManager] Key press "ENTER" against "بحث". @03-11-2024 10:35:52.0284 AM
+[ReportManager] Assert that the element located by "By.id: result-stats" text does not equal "". @03-11-2024 10:35:52.0288 AM
+[ReportManager] Expected "", and actual "حوالى 490,000 نتيجة (0.32 ثانية) " @03-11-2024 10:35:53.0588 AM
+[ReportManager] Successfully created attachment 'Screenshot - Assert_10-35-55-747_03112024' @03-11-2024 10:35:55.0748 AM
+[ReportManager] Expected "", and actual "حوالى 490,000 نتيجة (0.32 ثانية) " @03-11-2024 10:35:55.0749 AM
+[ReportManager] Assertion passed @03-11-2024 10:35:55.0749 AM
+[ReportManager] Check that result stats is not empty @03-11-2024 10:35:55.0749 A

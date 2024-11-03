@@ -1,0 +1,9 @@
+[ReportManager] Setting "autoMaximizeBrowserWindow" property with "false". @03-11-2024 10:35:45.0342 AM
+[ReportManager] Capabilities {acceptInsecureCerts: true, browserName: MicrosoftEdge, ms:edgeOptions: {args: [--remote-debugging-pipe, --no-sandbox, --window-position=0,0, --window-size=1920,1080], extensions: [], prefs: {download.default_directory: /Users/olaelnasharty/IdeaPr..., download.prompt_for_download: false, profile.default_content_settings.popups: 0}}, pageLoadStrategy: normal, platformName: linux, timeouts: {pageLoad: 60000, script: 60000}, unhandledPromptBehavior: ignore, webSocketUrl: true} @03-11-2024 10:35:45.0344 AM
+[ReportManager] Attempting to run remotely on: "LINUX | Microsoft edge | http://localhost:4444/". @03-11-2024 10:35:45.0345 AM
+[ReportManager] Attempting to instantiate remote driver instance for up to 1min. @03-11-2024 10:35:45.0345 AM
+[ReportManager] Successfully instantiated remote driver instance. @03-11-2024 10:35:48.0920 AM
+[ReportManager] Successfully Opened "Microsoft edge". @03-11-2024 10:35:48.0921 AM
+[ReportManager] Target URL: "https://www.google.com/" @03-11-2024 10:35:49.0263 AM
+[ReportManager] Initial URL: "about:blank" @03-11-2024 10:35:49.0325 AM
+[ReportManager] Navigate to url "https://www.google.com/". @03-11-2024 10:35:51.0698 A
