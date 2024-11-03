@@ -27,7 +27,7 @@ jobs:
           maven-version: 3.9.5
 
       - name: Run GitHubPageTest
-        run:  mvn test -Dtest=SampleTest4 -DexecutionAddress=localhost:4444 -Dbrowser=firefox -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
+        run:  mvn test -Dtest=SampleTest5 -DexecutionAddress=localhost:4444 -Dbrowser=firefox -DheadlessExecution=true -Dsurefire.failIfNoSpecifiedTests=false -e
         
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
