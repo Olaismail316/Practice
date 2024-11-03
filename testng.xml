@@ -3,7 +3,7 @@
     <test name="firefox">
         <parameter name="browser" value="firefox" />
         <classes>
-            <class name="SampleTest">
+            <class name="SampleTest5">
                 <methods>
                     <include name="checkHomePageTitleIsCorrect"/>
 
@@ -16,7 +16,7 @@
     <test name="chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="SampleTest">
+            <class name="SampleTest5">
                 <methods>
                     <include name="checkResultStatsIsNotEmptyAfterSearchingForAQuery"/>
                 </methods>
