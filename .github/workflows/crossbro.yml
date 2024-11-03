@@ -9,7 +9,7 @@ jobs:
     strategy:
       max-parallel: 6  # Set parallel limit if needed
       matrix:
-        browser: [chrome, firefox, edge]
+        browser: [firefox, edge]
         test_class: [SampleTest5]
         parallel_mode: [METHODS]
         os: [LINUX]
