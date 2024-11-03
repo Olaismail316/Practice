@@ -2,6 +2,7 @@
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
@@ -26,7 +27,7 @@ public class SampleTest5 {
         // Set capabilities based on the browser
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName(browser);
-        //driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
     }
 
     @AfterMethod(description = "Teardown Browser instance.")
