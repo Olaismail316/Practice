@@ -1,0 +1,64 @@
+name: Cross-Browser Selenium Grid Tests
+
+on:
+  workflow_dispatch:  # Manual trigger from GitHub Actions UI
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 6  # Set parallel limit if needed
+      matrix:
+        browser: [chrome, firefox, edge]
+        test_class: [SampleTest5]
+        parallel_mode: [METHODS]
+        os: [LINUX]
+        java_version: [21]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: Set up Selenium Grid with Docker Compose
+        run: |
+          docker compose -f src/main/resources/docker-compose/selenium4.yml up --scale chrome=1 --scale edge=1 --scale firefox=1 -d
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java_version }}
+          distribution: 'zulu'
+          cache: 'maven'
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v5
+        with:
+          maven-version: 3.9.5
+
+      - name: Check Running Containers
+        run: docker ps
+
+      - name: Run Tests on ${{ matrix.browser }} with ${{ matrix.test_class }}
+        continue-on-error: true
+        run: |
+          mvn -e test "-DdefaultElementIdentificationTimeout=5" "-DsetParallelMode=${{ matrix.parallel_mode }}" "-DsetParallel=METHODS" "-DretryMaximumNumberOfAttempts=1" "-DexecutionAddress=localhost:4444"
+            "-DtargetOperatingSystem=${{ matrix.os }}"  "-DtargetBrowserName=${{ matrix.browser }}" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" -Dtest="${SampleTest5}"
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
+          files: ./target/jacoco/jacoco.xml
+          verbose: true
+
+      - name: Upload Allure Report as Pipeline Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Allure_Report_${{ matrix.browser }}_${{ matrix.test_class }}
+          path: "allure-report/*.html"
+
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+        if: always()
