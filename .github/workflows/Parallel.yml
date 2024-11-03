@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         run: |
           mvn -e test "-DdefaultElementIdentificationTimeout=5" "-DsetParallelMode=${{ matrix.parallel_mode }}" "-DsetParallel=METHODS" "-DretryMaximumNumberOfAttempts=1" "-DexecutionAddress=localhost:4444"
-            "-DtargetOperatingSystem=${{ matrix.os }}"  "-DtargetBrowserName=${{ matrix.browser }}" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" -Dtest="${SampleTest5}"
+            "-DtargetOperatingSystem=${{ matrix.os }}"  "-DtargetBrowserName=${{ matrix.browser }}" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" -Dtest="${matrix.test_class}"
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v4
