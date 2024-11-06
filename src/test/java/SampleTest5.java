@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SampleTest5 {
 
-    WebDriver driver ;
+    RemoteWebDriver driver ;
 
     @Test(description = "Check that Home Page Title is correct.")
     public void checkHomePageTitleIsCorrect()
@@ -27,7 +28,7 @@ public class SampleTest5 {
         // Set capabilities based on the browser
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName(browser);
-        driver = new FirefoxDriver();
+        driver = new RemoteWebDriver(capabilities);
     }
 
     @AfterMethod(description = "Teardown Browser instance.")

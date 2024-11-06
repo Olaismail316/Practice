@@ -151,5 +151,11 @@
         </plugins>
     </build>
 </profile>
-</profiles>
+        <profile>
+            <id>runSampleTests</id>
+            <properties>
+                <GLOBAL_TESTING_SCOPE>SampleTest,SampleTest2,SampleTest3,SampleTest4,SampleTest5</GLOBAL_TESTING_SCOPE>
+            </properties>
+        </profile>
+    </profiles>
 </project>

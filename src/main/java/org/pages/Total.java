@@ -22,7 +22,7 @@ public class Total {
         // Calculate total gold value
         double gold18kValue = gold18kPrice * 52.39;
         double gold21kValue = gold21kPrice * 55.5;
-        double gold24kValue = gold24kPrice * 75;
+        double gold24kValue = gold24kPrice * 80;
         double totalGoldValue = gold18kValue + gold21kValue + gold24kValue;
 
         // Calculate total currency value
