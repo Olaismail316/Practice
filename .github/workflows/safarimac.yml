@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+      - name: Set up Native Selenium Grid
+        run: docker compose -f src/main/resources/docker-compose/selenium4.yml up --scale chrome=0 --scale safari=1 --scale firefox=10 -d
       - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
@@ -22,11 +24,11 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: mvn test -DtargetBrowserName="safari" -DexecutionAddress="local" "-DgenerateAllureReportArchive=true" -DtargetOperatingSystem="MAC" -DwhenToTakePageSourceSnapshot="FailuresOnly" -DscreenshotParams_whenToTakeAScreenshot="FailuresOnly" -Dtest="SampleTest3"
+        run: mvn test -DtargetBrowserName="safari" -DexecutionAddress="remote" "-DgenerateAllureReportArchive=true" -DtargetOperatingSystem="MAC" -Dtest="SampleTest3"
       - name: Upload Allure Report as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: Safari_MacOS_Allure
+          name: SafMacOSAllure
           path: "allure-report/*.html"
       - name: Test Summary
         uses: test-summary/action@v2
