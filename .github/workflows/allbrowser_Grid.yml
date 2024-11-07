@@ -128,7 +128,7 @@ jobs:
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{secrets.smtp.gmail.com}}
-          server_port: ${{secrets.587}}
+          server_port: 587
           username: ${{ secrets.olaismail613@gmail.com}}
           password: ${{secrets.2012019Ali@}}
           subject: "Allure Test Report"
