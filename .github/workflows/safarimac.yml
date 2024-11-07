@@ -5,44 +5,45 @@ on:
   
 jobs:
   E2E_Safari_MacOS_Test:
-    
     runs-on: macos-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - name: Set up Native Selenium Grid
-        run: docker compose -f src/main/resources/docker-compose/selenium4.yml up --scale safari=10 --scale edge=0 --scale firefox=0 -d
-      - name: Set up JDK 21
+      - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
           distribution: 'zulu'
-          cache: 'maven'
+          java-version: '21'
       - name: Set up Maven
-        uses: stCarolas/setup-maven@v5
+        uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 3.9.5
-      - name: Check running containers
-        run: docker ps
-      - name: Run tests
+          maven-version: 3.9.6
+      - name: Run Tests
         continue-on-error: true
-        run: mvn -e test "-DdefaultElementIdentificationTimeout=5" "-DsetParallelMode=DYNAMIC" "-DsetParallel=METHODS" "-DretryMaximumNumberOfAttempts=1" "-DexecutionAddress=localhost:4444" "-DtargetOperatingSystem=MAC" "-DtargetBrowserName=safari" "-DheadlessExecution=true" "-DgenerateAllureReportArchive=true" -Dtest=-Dtest=SampleTest2,SampleTest3     
-        
-      - name: Upload coverage to Codecov
-        uses:  codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
-          files: ./target/jacoco/jacoco.xml
-          verbose: true
-      - name: Upload Allure Report as Pipeline Artifact
-        if: always()
-        uses: actions/upload-artifact@v4
+        run: mvn test -DtargetBrowserName="safari" -DexecutionAddress="local" -DtargetOperatingSystem="MAC" -DwhenToTakePageSourceSnapshot="FailuresOnly" -DscreenshotParams_whenToTakeAScreenshot="FailuresOnly" -Dtest="SampleTest3"
+      - name: Upload Allure Report as Artifact
+        uses: actions/upload-artifact@v3
         with:
           name: Safari_MacOS_Allure
-          path: "allure-report/*.html"
-      - name: Test Summary
-        uses: test-summary/action@v2
+          path: "allure-report/*_AllureReport.html"
+      - name: Upload Execution Summary Report as Artifact
+        uses: actions/upload-artifact@v3
         with:
-          paths: "target/surefire-reports/junitreports/TEST-*.xml"
+          name: Safari_MacOS_Summary
+          path: "execution-summary/ExecutionSummaryReport_*.html"
+#      - name: Publish Report
+#        continue-on-error: true
+#        uses: dorny/test-reporter@v1
+#        if: success() || failure()
+#        with:
+#          name: Tests Report Safari_MacOS
+#          path: 'target/surefire-reports/TEST-*.xml'
+#          reporter: java-junit
+      - name: Publish Test Results
+        continue-on-error: true
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
         if: always()
+        with:
+          check_name: "Tests Results Safari_MacOS"
+          files: |
+            target/surefire-reports/TEST-*.xml
