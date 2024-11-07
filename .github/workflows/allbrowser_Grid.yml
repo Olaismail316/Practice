@@ -124,24 +124,3 @@ jobs:
         with:
           paths: "target/surefire-reports/junitreports/TEST-*.xml"
         if: always()
-      - name: Send Allure Report via Email
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: olaismail613@gmail.com
-          password: 2012019Ali@
-          subject: "Allure Test Report"
-          body: |
-            Hi,
-            
-            Please find attached the Allure reports for the recent test run on Firefox, Chrome, and Edge.
-            
-            Best regards,
-            CI/CD Team
-          to: olaismail613@gmail.com
-          from: olaismail613@gmail.com
-          attachments: |
-            allure-reports/Ubuntu_Firefox_Grid/*.html
-            allure-reports/Ubuntu_Chrome_Grid/*.html
-            allure-reports/Ubuntu_Edge_Grid/*.html
