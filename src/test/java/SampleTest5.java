@@ -18,7 +18,7 @@ public class SampleTest5 {
     public void checkHomePageTitleIsCorrect()
     {
         driver.navigate().to("https://www.google.com/");
-        driver.findElement(By.name("q")).sendKeys("SHAFT1");
+        driver.findElement(By.name("q")).sendKeys("Ola Elnasharty");
     }
 
     @BeforeMethod(description = "Setup Browser instance.")
