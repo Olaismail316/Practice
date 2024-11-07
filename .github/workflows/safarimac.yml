@@ -25,25 +25,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Safari_MacOS_Allure
-          path: "allure-report/*_AllureReport.html"
-      - name: Upload Execution Summary Report as Artifact
-        uses: actions/upload-artifact@v3
+          path: "allure-report/*.html"
+      - name: Test Summary
+        uses: test-summary/action@v2
         with:
-          name: Safari_MacOS_Summary
-          path: "execution-summary/ExecutionSummaryReport_*.html"
-#      - name: Publish Report
-#        continue-on-error: true
-#        uses: dorny/test-reporter@v1
-#        if: success() || failure()
-#        with:
-#          name: Tests Report Safari_MacOS
-#          path: 'target/surefire-reports/TEST-*.xml'
-#          reporter: java-junit
-      - name: Publish Test Results
-        continue-on-error: true
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+          paths: "target/surefire-reports/junitreports/TEST-*.xml"
         if: always()
-        with:
-          check_name: "Tests Results Safari_MacOS"
-          files: |
-            target/surefire-reports/TEST-*.xml
+     
