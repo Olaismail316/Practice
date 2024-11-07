@@ -14,11 +14,14 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '21'
+          cache: 'maven'
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 3.9.6
-      - name: Run Tests
+          maven-version: 3.9.5
+      - name: Check running containers
+        run: docker ps
+      - name: Run tests
         continue-on-error: true
         run: mvn test -DtargetBrowserName="safari" -DexecutionAddress="local" -DtargetOperatingSystem="MAC" -DwhenToTakePageSourceSnapshot="FailuresOnly" -DscreenshotParams_whenToTakeAScreenshot="FailuresOnly" -Dtest="SampleTest3"
       - name: Upload Allure Report as Artifact
