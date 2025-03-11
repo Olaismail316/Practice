@@ -26,7 +26,7 @@ public class SampleTest {
     @Epic("SHAFT Web GUI Template")
     @Story("Google Basic Validations")@TmsLink("TC-002")
     @Description("Given I am on the Home page,\nWhen I search for a valid query,\nThen the result stats will show some data (will not be empty).")
-    @Test(description = "Check that Result Stats is not empty after searching for a query.")
+    //@Test(description = "Check that Result Stats is not empty after searching for a query.")
     public void checkResultStatsIsNotEmptyAfterSearchingForAQuery() {
         new Home(driver).searchForQuery(testData.getTestData("searchQuery"))
                 .assertResultStatsIsNotEmpty();

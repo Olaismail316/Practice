@@ -1,0 +1,13 @@
+pipelines:
+  custom:
+    run-tests: # This is the name of your manual pipeline
+      - step:
+          name: Run Java Tests
+          script:
+            - ./mvnw clean test -Dtest=${TEST_CLASSES} # Replace with your Maven command
+          variables:
+            - name: TEST_CLASSES
+              default: "com.example.MyTestClass" # Replace with your default test class
+          services:
+            - docker:
+                image: maven:3.8.5-jdk-11 # Or your preferred Maven/JDK image
