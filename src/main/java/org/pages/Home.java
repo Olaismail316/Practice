@@ -29,8 +29,8 @@ public class Home {
 
     @Step("And I search for '{query}'.")
     public org.pages.Results searchForQuery(String query){
-        driver.element().type(searchBox, query)
-                .keyPress(searchBox, Keys.ENTER);
+        driver.element().type(searchBox, query).click(searchBox);
+
         return new org.pages.Results(driver);
     }
 }
